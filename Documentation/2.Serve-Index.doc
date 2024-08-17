@@ -1,0 +1,8 @@
+npm install serve-index
+
+
+The issue you're encountering happens because by default, the express.static middleware serves static files like HTML, CSS, JS, images, etc., but it doesn't automatically serve directory listings or index files unless those files are present in the folder.
+
+To resolve this, you can create an index.html or similar file inside the Documentation folder. When you visit http://localhost:3000/folderServe/, Express will serve that file.
+
+If you want to enable directory listings (which shows the list of files in the folder), you'll need an additional middleware like serve-index. Here's how to implement that:

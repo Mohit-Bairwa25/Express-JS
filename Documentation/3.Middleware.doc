@@ -1,0 +1,8 @@
+A middleware in Express (and web development in general) is a function that sits between a client request and the server's response. It has access to the request (req) and response (res) objects, as well as the next() function, which passes control to the next middleware function in the stack.
+
+Middleware functions can:
+
+Execute code: Perform actions based on the incoming request.
+Modify the request and response objects: For example, you might attach additional information to the request object before passing it on.
+End the request-response cycle: Send a response back to the client directly, without continuing further in the middleware stack.
+Call the next() function: This moves the process to the next middleware function in the stack. If next() isn't called, the request will be left hanging.

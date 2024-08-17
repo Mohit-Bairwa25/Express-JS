@@ -1,0 +1,7 @@
+npm init
+it will create a file package.json
+
+Globally Installing Nodemon
+npm install -g nodemon
+
+npm install -D nodemon
