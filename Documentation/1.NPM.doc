@@ -5,3 +5,7 @@ Globally Installing Nodemon
 npm install -g nodemon
 
 npm install -D nodemon
+
+handlebars
+
+npm i express-handlebars

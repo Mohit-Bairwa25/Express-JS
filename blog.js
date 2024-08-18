@@ -1,14 +1,23 @@
 const express = require('express');
 const path = require('path');
+const blogRoutes = require('./Routes/blogRoutes');
+const { create } = require('express-handlebars');
+
 const app = express();
-const port = 3000;
 
-// To Serve Folder
-app.use('/folderServe', express.static(path.join(__dirname, 'Static')));
+// Setup Handlebars as view engine
+const hbs = create({ defaultLayout: 'main' }); // Specify default layout
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
-// Import the routes
-app.use('/', require(path.join(__dirname, 'Routes/blogRoutes')));
+// Set views directory
+app.set('views', path.join(__dirname, 'views'));
 
-app.listen(port, () => {
-  console.log(`Blog App is Running at http://localhost:${port}/`);
+// Use routes
+app.use('/', blogRoutes);
+
+// Start server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });

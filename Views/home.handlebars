@@ -1,0 +1,32 @@
+<div class="bg-light py-5 text-center mt-5">
+  <div class="container mt-5">
+    <h1 class="display-4">Welcome to Coding Thunder</h1>
+    <p class="lead">Your one-stop destination to learn and share coding tips, tutorials, and guides.</p>
+    <a href="/blog" class="btn btn-primary btn-lg">Explore Articles</a>
+  </div>
+</div>
+
+<!-- Latest Articles Section -->
+<div class="container py-5 mt-5">
+  <h2 class="mb-4">Latest Articles</h2>
+  <div class="row">
+    {{#each blogs}}
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">{{this.title}}</h5>
+          <p class="card-text">{{this.content}}</p>
+          <a href="/blogPost/{{this.slug}}" class="btn btn-outline-primary">Read More</a>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-4 mt-5">
+  <div class="container text-center">
+    <p>&copy; 2024 Coding Thunder. All Rights Reserved.</p>
+  </div>
+</footer>
